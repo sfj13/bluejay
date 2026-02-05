@@ -109,6 +109,7 @@ IF MCU_TYPE == MCU_BB2
     ; Two letter layouts start here. Preferably the first letter is the base
     ; layout and the second letter is the variation in alphabetical order.
     OA_ EQU 27                          ; Bm Cm Am Vn __ RX __ __  |  Ap Ac Bp Bc Cp Cc __ __  |  no     yes    low    _ Pinout Like O, but open drain instead of push-pull COM FETs
+    AC_ EQU 28                          ; Vn Am Bm Cm __ RX __ __  |  Cc Cp Bp Bc Ap Cc __ __  |  no     yes    low    _ Pinout like A, but A/C swapped, Cp/Cc swapped, low side pwm, com fets active low
 ENDIF
 
 ; BB51 - Required
