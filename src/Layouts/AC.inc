@@ -27,12 +27,12 @@
 ; PORT 0                   |  PORT 1                   |  PWM    COM    PWM    LED
 ; P0 P1 P2 P3 P4 P5 P6 P7  |  P0 P1 P2 P3 P4 P5 P6 P7  |  inv    inv    side    n
 ; -----------------------  |  -----------------------  |  -------------------------
-; Vn Am Bm Cm __ RX __ __  |  Ap Ac Bp Bc Cp Cc __ __  |  no     no     high   _
+; Vn Am Bm Cm __ RX __ __  |  Cc Cp Bp Bc Ap Cc __ __  |  no     yes    low     _
 ;
 ;**** **** **** **** **** **** **** **** **** **** **** **** ****
 
 PWM_ACTIVE_HIGH EQU 1                   ; Pwm non-inverted
-COM_ACTIVE_HIGH EQU 1                   ; Damping inverted
+COM_ACTIVE_HIGH EQU 0                   ; Damping inverted
 
 COMPARATOR_PORT EQU 0                   ; All comparator (mux) pins must be on the same port
 COMPARATOR_INVERT EQU 0                 ; Comparator output non-inverted
@@ -67,15 +67,15 @@ P0_SKIP EQU 0FFh
 ;**** **** **** **** **** **** **** **** **** **** **** **** ****
 ;     EQU 7
 ;     EQU 6
-C_Com EQU 5
-C_Pwm EQU 4
+A_Com EQU 5
+A_Pwm EQU 4
 B_Com EQU 3
 B_Pwm EQU 2
-A_Com EQU 1
-A_Pwm EQU 0
+C_Pwm EQU 1
+C_Com EQU 0
 
 P1_DIGITAL EQU (1 SHL A_Pwm) + (1 SHL B_Pwm) + (1 SHL C_Pwm) + (1 SHL A_Com) + (1 SHL B_Com) + (1 SHL C_Com)
-P1_INIT EQU 00h
+P1_INIT EQU (1 SHL A_Com) + (1 SHL B_Com) + (1 SHL C_Com) ; Active low com fets
 P1_PUSHPULL EQU (1 SHL A_Pwm) + (1 SHL B_Pwm) + (1 SHL C_Pwm) + (1 SHL A_Com) + (1 SHL B_Com) + (1 SHL C_Com)
 P1_SKIP EQU 0FFh
 
