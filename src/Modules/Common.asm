@@ -56,7 +56,7 @@ ENDIF
 ; manually for maximum flexibility.
 ;
 ;**** **** **** **** **** **** **** **** **** **** **** **** ****
-IF ESCNO < 27
+IF ESCNO < 28
     ESC_C_COUNT EQU 1
     ESC_C EQU "A" + ESCNO - 1
 ELSE
@@ -123,6 +123,10 @@ ELSEIF ESCNO == OA_
     $include (Layouts/OA.inc)           ; Select pinout OA
     ESC_C0 EQU "O"
     ESC_C1 EQU "A"
+ELSEIF ESCNO == AC_
+    $include (Layouts/AC.inc)
+    ESC_CO EQU "A"
+    ESC_C1 EQU "C"
 ENDIF
 ENDIF
 
