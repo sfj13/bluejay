@@ -1,11 +1,12 @@
 # Current version
-TAG			:= $(shell git describe --tags --abbrev=0)
-VERSION		?= $(TAG)
+#TAG			:= $(shell git describe --tags --abbrev=0)
+#VERSION		?= $(TAG)
+VERSION			?= v0.21.1
 SETTINGSDIR	?= ./src/Settings
 
 # Target parameters
 LAYOUTS		= A B C D E F G H I J K L M N O P Q R S T U V W Z \
-			  OA
+			  OA AC
 MCUS			= H
 LAYOUTS_X		= A B C D E
 MCUS_X		= X
@@ -24,14 +25,19 @@ HEX_DIR		?= $(OUTPUT_DIR)/hex
 
 # Path to the keil binaries
 KEIL_PATH	?= ~/.wine/drive_c/Keil_v5/C51/BIN
+#KEIL_PATH	?= ./BIN
+WINE ?= ./wine/bin/wine
 
 # Assembler and linker binaries
 AX51_BIN	= $(KEIL_PATH)/AX51.exe
 LX51_BIN	= $(KEIL_PATH)/LX51.exe
 OX51_BIN	= $(KEIL_PATH)/Ohx51.exe
-AX51		= wine $(AX51_BIN)
-LX51		= wine $(LX51_BIN)
-OX51		= wine $(OX51_BIN)
+#AX51		= wine $(AX51_BIN)
+#LX51		= wine $(LX51_BIN)
+#OX51		= wine $(OX51_BIN)
+AX51		= $(WINE) $(AX51_BIN)
+LX51		= $(WINE) $(LX51_BIN)
+OX51		= $(WINE) $(OX51_BIN)
 
 # Set up flags
 #AX51_FLAGS	= DEBUG NOMOD51
