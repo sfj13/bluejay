@@ -208,7 +208,7 @@ IF DEADTIME == 0
     cON  P_C_Com
     mov  P1SKIP, #(NOT (1 SHL C_Pwm))
 ELSE
-    mov  P1SKIP, #(NOT ((1 SHL C_Pwm) + (1 SHL C_Com)))
+    mov  P1SKIP, #(NOT ((1 SHL C_Pwm))); + (1 SHL C_Com)))
 ENDIF
 ENDM
 
