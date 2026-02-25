@@ -123,10 +123,10 @@ ELSEIF ESCNO == OA_
     $include (Layouts/OA.inc)           ; Select pinout OA
     ESC_C0 EQU "O"
     ESC_C1 EQU "A"
-ELSEIF ESCNO == AC_
-    $include (Layouts/AC.inc)
-    ESC_CO EQU "A"
-    ESC_C1 EQU "C"
+ELSEIF ESCNO == X_
+    $include (Layouts/X.inc)
+;    ESC_CO EQU "A"
+;    ESC_C1 EQU "C"
 ENDIF
 ENDIF
 
