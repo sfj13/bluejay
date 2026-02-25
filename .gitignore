@@ -3,4 +3,8 @@
 /tools/.wine
 *.diff
 .project
-
+.DS_Store
+BIN
+C51V961.EXE
+make_result.txt
+wine
