@@ -1,0 +1,29 @@
+### Run BLHeli Suite on Mac for initial Flash ###
+
+Can use the wine tool that comes with the simplicity studio install
+
+Aliases created in bluejay folder for wine and keil compiler tools - not using the keil compiler alias
+
+To run BLHeliSuite:
+
+From the bluejay directory:
+wine/bin/wine ~/Downloads/BLHeliSuite16714903/BLHeliSuite.exe
+
+or
+
+/Users/spencer/Documents/Documents\ -\ Spencer’s\ MacBook\ Air/rc_heli/bluejay/wine/bin/wine ~/Downloads/BLHeliSuite16714903/BLHeliSuite.exe
+
+
+### Setting up build environment ###
+
+Wine is located at:
+/Applications/Simplicity Studio.app/Contents/Eclipse/support/common/wine/Wine Stable.app/Contents/Resources/wine/
+
+Keil C51 tools needs to be installed using wine then map the keil tools path to the make file. (The keil tools 
+installs microvision where you need to register it using a product key provided from keil / SI Labs).
+
+Keil tools location:
+~/.wine/drive_c/Keil_v5/C51/BIN
+
+Should be able to use the make file to build targets now
+
