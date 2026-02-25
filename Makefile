@@ -1,12 +1,12 @@
 # Current version
 #TAG			:= $(shell git describe --tags --abbrev=0)
 #VERSION		?= $(TAG)
-VERSION			?= v0.21.1
+VERSION			?= v0.1.0
 SETTINGSDIR	?= ./src/Settings
 
 # Target parameters
-LAYOUTS		= A B C D E F G H I J K L M N O P Q R S T U V W Z \
-			  OA AC
+LAYOUTS		= A B C D E F G H I J K L M N O P Q R S T U V W X Z \
+			  OA
 MCUS			= H
 LAYOUTS_X		= A B C D E
 MCUS_X		= X
